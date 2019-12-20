@@ -1,5 +1,7 @@
 # sample-controller
 
+Sample controller to monitor pod lifecycle events
+
 ## To deploy
 
 ```
