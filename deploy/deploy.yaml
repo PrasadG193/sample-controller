@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-controller
+  namespace: pod-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: controller
+  template:
+    metadata:
+      labels:
+        app: controller
+    spec:
+      serviceAccountName: pod-controller
+      containers:
+      - image: prasadg193/sample-controller:latest
+        imagePullPolicy: IfNotPresent
+        name: controller
+  
